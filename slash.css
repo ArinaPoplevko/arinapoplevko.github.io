@@ -1,0 +1,21 @@
+@import url(reset.css);
+
+.wrapper{
+	max-width: 800px;
+	margin:0 auto;
+}
+
+h1, .h1{
+	font-size: 1.5em;
+	width: 50%;
+	margin:20px auto;
+	text-align: center;
+}
+.logo{
+	
+}
+
+@media screen and (max-width: 600px){
+	
+	img { width: 100%;}
+}
