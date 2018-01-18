@@ -1,100 +1,125 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Baxter</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/jquery-1.5.min.js"></script>
-	<script src="js/equalHeight.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Мой лендинг</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<!-- 1. Link to jQuery (1.8 or later), -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+<link rel="stylesheet" href="css/animate.css">
+
 </head>
 <body>
-	<div class="wrapper">
-		<!-- общая обёртка -->
-		<div class="header0">
-			<!-- чёрно-серая полоса -->
+<div class="wrapper">
+	<!--  header 
+	- логотип (создать логотип для страницы)
+	- меню 
+
+	 -->
+	 <header>
+		<!-- - логотип (создать логотип для страницы) -->
+		<div class="logo animated tada">
+			<a href="#"><img src="img/logo.png" alt="что-то про нашу фирму :)"></a>
 		</div>
-		<div class="header">
-			<!-- логотип, меню, FAQ -->
-			<div class="logo">
-				<a href="#"></a>
-				<!--<a href="#"><img src="img/logo.gif" alt="Логотип компании"></a>
-Вариант 1
-				-->
-			</div>
-			<nav class="nav">
-				<ul>
-					<li><a href="#" class="active">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#" >Services</a></li>
-					<li><a href="#">Partners</a></li>
-					<li><a href="#">Solutions</a></li>
-				</ul>
-				
-			</nav>
-			<div class="faq">
-				<a href="faq.html"><img src="img/faq.png" alt="Ответы на часто задаваемые вопросы"></a>
-			</div>
-		</div>
-		<div class="reclama">
-			<!-- рекламный блок -->
-			<div class="text">
-				<h1>Fusce a sapien ac justo </h1>
-				<p>Phasellus at elit velit, ac</p>
-			</div>
-			<div class="peoples">
-				<img src="img/peoples.png" alt="Рекламные агенты ;)">
-			</div>
-			<div class="peopleBg"></div>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">О нас</a></li>
+				<li><a href="#">Отзывы</a></li>
+				<li><a href="#">Обратная связь</a></li>
+			</ul>
+		</nav>
+	 
+	 </header>
+	 
+	 <!-- content
+	- "каруселька"
+	- статья (статьи)
+	- отзывы "благодарных" клиентов
+	- форма обратной связи
+	 
+	 -->
+	 <main>
+		<section class="karusel">
+		<div class="fotorama" data-nav="thumbs" data-allowfullscreen="true">
+  <img src="http://s.fotorama.io/1.jpg">
+  <img src="http://s.fotorama.io/2.jpg">
+</div>
 		
-	</div>
-	<!-- цветной блок с превью статей -->
-	<div class="colorBig">
-	<div class="color clearfix">
-		<div class="blue">
-			<h2>Dedicated 24/7 Support</h2>
-			<p>Pellentesque tellus tortor, lobortis eget venenatis non, aliquet a massa. Mauris aliquam ultrices lectus, quis</p>
-			<a href="#">Подробнее</a>
-		</div>
-		<div class="yellow">
-			<h2>Quality Assured Services</h2>
-			<p>Mauris euismod enim aliquet orci cursus aliquet. Nam lectus magna, varius nec aliquet in, pharetra eu felis.  рогрор лор  лрлр</p>
-			<a href="#">Подробнее</a>
-			<div class="strelka1"></div>
-		</div>
-		<div class="green">
-			<h2>Our Focus</h2>
+		<!-- разместить iframe с возможностью просмотра страниц-->
+		<iframe src="https://www.youtube.com/embed/hrDcZkZp_pU" name="karusel" width="100%" height="350">
+			<!-- надо ли здесь что-то разместить?  -->
+		</iframe>
+		<br>
+		<a href="https://www.youtube.com/embed/bV-KjQvCxbM" target="karusel">Кадр 1</a><a href="https://www.youtube.com/embed/fYLzdkLgU3M" target="karusel">Кадр 2</a><a href="https://www.youtube.com/embed/hrDcZkZp_pU" target="karusel">Кадр 3</a>
+		</section>
+		
+		<article>
+		<!-- выбрать шрифт для заголовка -->
+			<h1>Самый красивый заголовок</h1>
+				<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот.</p>
+
+				<p>Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.</p>
+
+				<p>Он собрал семь своих заглавных букв, подпоясал инициал за пояс и пустился в дорогу. Взобравшись на первую вершину курсивных гор, бросил он последний взгляд назад, на силуэт своего родного города Буквоград, на заголовок деревни Алфавит и на подзаголовок своего переулка Строчка. Грустный реторический вопрос скатился по его щеке и он продолжил свой путь. По дороге встретил текст рукопись. Она предупредила его: «В моей стране все переписывается по несколько раз. Единственное, что от меня осталось, это приставка «и». Возвращайся ты лучше в свою безопасную страну». Не послушавшись рукописи, наш текст продолжил свой путь. Вскоре ему повстречался коварный составитель</p>
 			
-			<p>Etiam ut ligula orci. Praesent male-suada leo eu magna ultricies male-suada.<a href="#" class="test">Подробнее</a> Cras et velit a mi bibendum Etiam ut ligula orci. </p>
-			<a href="#">Подробнее</a>
-
-			<div class="strelka2"></div>
-		</div>
-	</div>
-</div>
-
-<div class="bw">
-	<div class="bwInclude">
-		<div class="article">
-			<h2>Welcome to our site!</h2>
-			<p id="akcent">Sed a sollicitudin risus. Proin neque velit, rutrum et semper et, dignissim feugiat lacus. Donec ornare porta dictum. Quisque ornare, libero ac viverra</p>
-			<p>Magna blandit magna, quis sollicitudin sapien tortor et ante. Nam ante ipsum, cursus ullamcorper volutpat ornare, volutpat ac arcu. Phasellus suscipit, leo sit amet scelerisque porta, neque enim malesuada neque, non bibendum magna mauris ullamcorper mauris. Curabitur enim felis, molestie fermentum ornare id, pellen-tesque et massa. Nullam vestibulum mi non urna semper vestibulum. Vestibulum</p>
-			<a href="#">Подробнее</a>
-		</div>
-		<div class="form">
-			<h2>Request a Quote</h2>
-			<form action="formd.php" method="POST" name="form1">
-				<input type="text">
-				<input type="text">
-				<input type="email">
-				<input type="submit" class="send" value="Send">
-			</form>
-		</div>
+		</article>
+		<!-- найти изображение клиентов -->
+		<section class="otzyvy">
+			
+			
+					<div><img src="img/human1.jpg" alt="клиент 1"></div>
+					<div><p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить</p></div>
+				
+				
+					<div><p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить</p></div>
+					<div><img src="img/human1.jpg" alt="клиент 2"></div>
+			
 		
-	</div>	
-	<div class="bwL"></div>
-		<div class="bwR"></div>
-		<div class="greynLine"></div>
-</div>
+		</section>
+		
+		<section class="forma">
+		<!-- создать форму заказа обратного звонка
+Форма будет состоять из полей:
+	- имя
+	- телефон
+	- дата-время
+		-кнопка "Отправить заявку" (разработать дизайн кнопки)
 
+		-->
+		</section>
+	 
+	 </main>
+	 
+	 
+	 
+	 <!-- footer
+
+	 -копирайт 
+	- меню 
+	- логотип 
+	 -->
+	 <footer>
+		<!-- - логотип (создать логотип для страницы) -->
+		<div class="logo">
+			<a href="#"><img src="img/logo.png" alt="что-то про нашу фирму :)"></a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">О нас</a></li>
+				<li><a href="#">Отзывы</a></li>
+				<li><a href="#">Обратная связь</a></li>
+			</ul>
+		</nav>
+		<div class="copyR">
+			<p>Данный сайт мой, разработан мной и защищен мной 2017</p>
+		</div>
+	 </footer>
+</div>
 </body>
 </html>
