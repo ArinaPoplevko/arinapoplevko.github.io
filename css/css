@@ -1,1 +1,471 @@
+/*=================================
+сбрасываем все стили в браузерах
+*/
+@import url(reset.css); 
+
+/*=================================
+настраиваем "обёртку" 
+	- центрируем и делаем фиксированной ширины
+*/
+.wrapper{
+	width: 1024px;
+	margin: 5px auto;
+	outline: 1px solid red ;
+	font-family: "Arial";
+}
+
+/*=====================================
+формируем чёрно-серую полосу в самом верху
+*/
+.header0{
+	height: 18px;
+	background-image: url("../img/bgH0.png");
+	background-repeat: repeat-x;
+	
+}
+/*====================================
+задаём "жёсткую" высоту блоку с меню, 
+логотипом и FAQ и позиционируем элементы
+*/
+.header{
+	height: 144px;
+	position: relative;
+	/*font-family: "Arial";*/
+	font-size: 16px;
+
+}
+/* ======================================
+блок навигации
+*/
+.nav{
+	width: 512px;
+	height: 47px;
+	position: absolute;
+	top: 60px;
+	left: 370px;
+	text-transform: uppercase;
+	
+}
+
+.nav li{
+	float: left;
+	margin-right: 25px;
+}
+
+.nav li a{
+	text-decoration: none;
+	color: #3f3f3f;
+}
+
+.nav a.active, .nav li a:hover, .color a:hover, .article a:hover
+{
+	color: #2c789c;
+}
+/*	=====================================
+логотип
+*/
+.logo{
+	width: 229px;
+	height: 72px;
+	position: absolute;
+	top: 35px;
+	left: 65px;
+	/*=================== Вариант 2 ==============*/
+	background-image: url("../img/logo.gif");	
+	background-repeat: no-repeat;
+}
+
+.logo a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/*========================Вариант 2 
+логотип
+END 
+
+======*/
+
+/* блок FAQ
+
+подумать как акцентировать наведение курсора 
+на ссылку FAQ
+*/
+.faq{
+	width: 87px;
+	height: 174px;
+	position: absolute;
+	top: -19px;
+	right: 45px;
+}
+/*===================================
+начало рекламного блока
+
+*/
+.reclama{
+	height: 418px;
+	
+	background-image: url("../img/bg_reclama.png");
+	background-repeat: no-repeat;
+	position: relative;
+	background-position: 95px 82px;
+}
+
+.peoples{
+	position: absolute;
+	top: 12px;
+	right: 55px;
+}
+
+.text{
+	width: 340px;
+	height: 55px;
+	text-align: right;
+	position: absolute;
+	top: 225px;
+	left: 52px;
+	
+}
+.text h1{
+	font-size: 23px;
+	color: #1d1e1b;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.text p{
+	font-size: 17px;
+	color: #2c789c;
+	margin-top: 5px;
+
+}
+/**/
+.peopleBg{
+	height: 100px;
+	width: 100%;
+	background-image: url("../img/people_bg.png");
+	background-repeat: repeat-y;
+	position: absolute;
+	bottom: 0;
+}
+
+/*========================================
+рекламный блок закрыт
+*/
+
+/*========================================
+цветной блок*/
+.colorBig{
+	width: 100%;
+	background-image: url("../img/bgColor.png");
+	background-repeat: repeat-y;
+}
+
+.color{
+	width: 935px;
+	/*height: 147px;*/
+	margin-left: 41px;
+	
+}
+
+.color h2{
+	/* Style for "Dedicated" */
+color: #fff;
+font-family: "Arial";
+font-size: 19px;
+font-weight: 400;
+line-height: 16px;
+}
+
+.color p{
+	/* Style for "Dedicated" */
+color: #fff;
+font-family: "Arial";
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+}
+
+.color a{
+	/*display: block;*/
+	/*width: 99px;
+	height: 26px;
+	background-image: url("../img/bgRM.png");
+	background-repeat: no-repeat;*/
+	/*box-sizing: border-box;*/
+	text-decoration: none;
+	background-color: #fff;
+	border-radius: 16px;
+	
+	/*opacity: 0.68;*/
+	color: rgba(0,0,0,0.68);
+	font-family: "Arial";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	padding: 7px 10px;
+	position: absolute;
+	bottom: 13px;
+
+}
+
+.blue, .green{
+	width: 306px;
+	/*height: 147px;*/
+	
+	float: left;
+	outline: 1px solid blue;
+	position: relative;
+	
+}
+
+.blue{
+	background-color: #2c789c;
+	background-image: url("../img/1.png");
+	background-repeat: no-repeat;
+	background-position: 251px 8px;
+	
+}
+
+.yellow{
+	width: 323px;
+	/*height: 147px;*/
+	
+	float: left;
+	outline: 1px solid blue;
+	background-color: #e5b00d;
+	position: relative;
+	background-image: url("../img/2.png");
+	background-repeat: no-repeat;
+	background-position: 265px 10px;
+	
+}
+
+.green {
+	background-color: #97ba15;
+	background-image: url("../img/3.png");
+	background-repeat: no-repeat;
+	background-position: 255px 10px;
+}
+
+.blue h2{
+	margin-left: 15px;
+}
+
+.yellow h2{
+	margin-left:22px;
+}
+
+.green h2{
+	margin-left:27px;
+}
+
+.blue p{
+	margin: 15px 0 20px 16px;
+	width: 265px;
+}
+
+.yellow p{
+	margin: 14px 0 20px 30px;
+	width: 270px;
+}
+
+.green p{
+	margin: 18px 0 20px 31px;
+	width: 250px;
+}
+
+
+.blue h2, .yellow h2, .green h2{
+	
+	 margin-top:18px;
+}
+
+.blue p, .yellow p, .green p{
+	
+	margin-bottom: 60px;
+}
+
+.yellow a, .green a{
+	left: 31px;
+	
+}
+
+.blue a{
+	left: 18px;
+}
+/*=============================
+заставляет блок color увидеть своих детей float 
+===============================
+*/
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.strelka1, .strelka2{
+	width: 25px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 40%;
+}
+
+.strelka1{
+	background-image: url("../img/4.png");
+	background-repeat: no-repeat;
+
+	
+}
+
+.strelka2{
+	background-image: url("../img/5.png");
+	background-repeat: no-repeat;
+	
+}
+/*==================================
+цветной блок закрыт
+=============================*/
+
+/*=====================================
+начало блока черно-белый с формой обратной связи
+======================*/
+
+.bw{
+	width: 100%;
+	background-image: url("../img/bgColor.png");
+	background-repeat: repeat-y;
+	/*height: 273px;*/
+	position: relative;
+	padding-bottom: 43px;
+	
+}
+
+.bwL{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 29px;
+	height: 100px;
+	background-image: url("../img/bgLbw.jpg");
+	z-index: 10;
+}
+
+.bwR{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 29px;
+	height: 100px;
+	background-image: url("../img/bgRbw.jpg");
+	z-index: 10;
+}
+
+.greynLine{
+	position: absolute;
+	bottom: 0;
+	width: 1024px;
+	height: 1px;
+	background-image: url("../img/bwline.jpg");
+	z-index: 5;
+}
+
+.bwInclude{	
+    width: 935px;
+	
+	margin-left: 41px;
+	outline: 1px solid green;
+	margin-bottom: 43px;
+	position: relative;
+	
+}
+.article{
+	width:595px;
+	height: 272px;
+	padding-top: 22px;
+	margin-left: 17px;
+}
+.form{
+	width:265px;
+	position: absolute;
+	top: 22px;
+	right: 16px;
+	
+	
+}
+
+.article h2, .form h2{
+
+font-family: "Arial";
+font-size: 24px;
+font-weight: 400;
+line-height: 16px;
+}
+
+.article h2{
+	
+	margin-bottom: 15px;
+}
+
+.article p{
+	color: #7b7d78;
+	font-family: "Arial";
+font-size: 16px;
+font-weight: 400;
+margin-bottom: 67px;
+}
+
+#akcent{
+	color: #1d1e1b;
+font-family: "Arial";
+font-size: 16px;
+font-weight: 400;
+margin-bottom: 25px;
+}
+
+.article a{
+		text-decoration: none;
+	background-color: #1d1e1b;
+	border-radius: 16px;
+	
+	/*opacity: 0.68;*/
+	color: #7b7d78;
+	font-family: "Arial";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	padding: 7px 10px;
+	position: absolute;
+	bottom: 30px;
+
+}
+
+.form h2{
+	margin-bottom: 7px;
+}
+
+.send{
+	text-decoration: none;
+	background-color: #1d1e1b;
+	border-radius: 16px;
+	
+	/*opacity: 0.68;*/
+	color: #7b7d78;
+	font-family: "Arial";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	padding: 7px 10px;
+	width: 50%;
+	
+}
+
+input{
+	width: 100%;
+	height: 33px;
+	border: 1px solid #dedede;
+	margin-bottom: 13px;
+}
+
 
