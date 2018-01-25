@@ -10,6 +10,7 @@ font-size: 16px;
 font-family: "PT Sans";
 }
 #section-0 {
+background-image: url(a-blue-sky-1330593332lYm...jpg);
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-size: cover;
