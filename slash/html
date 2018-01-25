@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     
+						<!-- Logo -->
+						<div class="col-xs-3">
+							    <div class="block block-type-logo block-id-global-logo" style=" background-image:none !important">
+        <img src="http://s1654828.cdn3.setup.ru/u/pic/96/9bf7ba01c111e88d4cf1884435ada3/-/logo.png" alt="Logo" class="logo-image" />
+    </div>
+
+						</div>
+						<!-- Phone -->
+						<div class="col-xs-9">
+							<div class="block block-type-header block-id-global-header">
+    <div class="block-content">
+        <div class="block-text block-type-header-text textcontent">
+            <p><span class="accenter">+375 (29) 356-79-89</span></p>
+        </div>
+    </div>
+</div>
+
+						</div>
+					</div>
+					
+					<div class="container__row mb-30">
+						<!-- Form -->
+						<div class="col-md-3">
+							    <div class="block block-type-info block-state-standalone block-id-global-mainform">
+        <div class="block-content">
+            <div class="block-text"><div class="feedback-container form-ready" data-form="custom_form_title=%D0%97%D0%B0%D0%BA%D0%B0%D0%B6%D0%B8+%D0%BF%D1%80%D1%8F%D0%BC%D0%BE+%D1%81%D0%B5%D0%B9%D1%87%D0%B0%D1%81!&amp;email=arina.poplevko@mail.ru&amp;fields%5B0%5D%5Bfield_name%5D=%D0%98%D0%BC%D1%8F+%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8F&amp;fields%5B0%5D%5Bfield_type%5D=text&amp;fields%5B0%5D%5Bfield_required%5D=1&amp;fields%5B0%5D%5B%24index%5D=0&amp;fields%5B0%5D%5B%24first%5D=true&amp;fields%5B0%5D%5B%24last%5D=false&amp;fields%5B1%5D%5Bfield_name%5D=Email&amp;fields%5B1%5D%5Bfield_type%5D=text&amp;fields%5B1%5D%5Bfield_required%5D=1&amp;fields%5B1%5D%5B%24index%5D=1&amp;fields%5B1%5D%5B%24first%5D=false&amp;fields%5B1%5D%5B%24last%5D=false&amp;fields%5B2%5D%5Bfield_name%5D=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81&amp;fields%5B2%5D%5Bfield_type%5D=text&amp;fields%5B2%5D%5Bfield_required%5D=1&amp;fields%5B2%5D%5B%24index%5D=2&amp;fields%5B2%5D%5B%24first%5D=false&amp;fields%5B2%5D%5B%24last%5D=true&amp;background_color=00997a&amp;background_transparent=0&amp;color=fff&amp;button_background_color=a90641&amp;button_text=%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C&amp;field_height=middle&amp;field_border_radius=1&amp;field_float=none&amp;form_width=&amp;form_orientation=vertical">
+<div class="block-type-form
+                            field-height-middle
+                            float-none
+
+
+    " style="width: auto; color: #000; padding-left: 0; padding-right: 0;">
+<h2>Заказать билет</h2>
+<form class="form-handler-id-custom" action="/" method="post"><input name="custom_form_title" value="Конверсионное действие!" type="hidden" /> <input name="admin_email" value="arina.poplevko@mail.ru" type="hidden" />
+<div class="form-group"><input class="form-control type-text required" placeholder="Имя отправителя*" name="Имя отправителя" value="" type="text" /></div>
+<div class="form-group"><input class="form-control type-text required" placeholder="Email*" name="Email" value="" type="text" /></div>
+<div class="form-group last"><input class="form-control type-text required" placeholder="Вопрос*" name="Вопрос" value="" type="text" /></div>
+<p class="success"></p>
+<div class="feedback-submit-block"><input class="btn btn-lg btn-block" id="feedback-submit" style="background-color: #ffa800;" value="Заказать" type="submit" /></div>
+</form></div>
+</div></div>
+        </div>
+    </div>
+
+						</div>
+						<!-- Main image -->
+						<div class="col-md-9">
+							    <div class="block block-type-item block-state-standalone block-id-global-maintext">
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/d8/7aa1fe01c111e89960e0f17dc07b30/-/phuket1.jpg" />
+            </div>
+            <div class="block-text textcontent"></div>
+        </div>
+    </div>
+
+						</div>
+					</div>
+					
+					<!-- Adv blocks -->
+					<div class="container__row advertising-block_default">
+						<div class="col-md-12 mb-30">
+							<!--'" -->
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							    <div class="block block-type-item block-state-standalone block-id-global-eventitem-1">
+            <h3 class="block-title">Что я получу?</h3>
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/9c/7fec4e01c211e89589a88480f26ea6/-/World___Thailand_Ao_Nang__Krabi__Thailand_095837_.jpg" />
+            </div>
+            <div class="block-text textcontent"></div>
+        </div>
+    </div>
+
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							    <div class="block block-type-item block-state-standalone block-id-global-eventitem-2">
+            <h3 class="block-title">Что я получу?</h3>
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/pic/1f/b8791e01c311e88044b97808755abe/-/59c4d9e5bbb4c.jpg" />
+            </div>
+            <div class="block-text textcontent"></div>
+        </div>
+    </div>
+
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							    <div class="block block-type-item block-state-standalone block-id-global-eventitem-3">
+            <h3 class="block-title">Что я получу?</h3>
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/eb/4376ac01c211e8b551de394c6cd81b/-/1-31.jpg" />
+            </div>
+            <div class="block-text textcontent"></div>
+        </div>
+    </div>
+
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							    <div class="block block-type-item block-state-standalone block-id-global-eventitem-4">
+            <h3 class="block-title">Что я получу?</h3>
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/03/38a4f801c311e88994bf436462f214/-/th.jpg" />
+            </div>
+            <div class="block-text textcontent"></div>
+        </div>
+    </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Levels -->
+			<div class="levels-set levels-set-id-blocks-level">
+    	<!-- Video block -->
+	<div class="section level level-1" id="section-1">
+		<div class="container">
+			
+			<div class="block block-type-section_styles">
+				<div class="block-content"></div>
+			</div>
+			<div class="col-md-12 mb-30">
+					            <div class="block block-type-info  block-id-global-video">
+            <h2 class="block-title">
+                                                                                                                 О Таиланде! 
+            </h2>
+                <div class="block-content">
+                    <div class="block-text block-type-info-text textcontent"><p><strong></strong>Таила́нд<span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;(</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Тайский язык" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA">тайск.</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;</span><span lang="th" style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">ประเทศไทย</span><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">)</span><sup id="cite_ref-5" class="reference" style="line-height: 1em; unicode-bidi: isolate; white-space: nowrap; font-size: 11.2px; color: #222222; font-family: sans-serif; background-color: #ffffff;"></sup><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">,&nbsp;</span><strong style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">Короле́вство Таила́нд</strong><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;(</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Тайский язык" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA">тайск.</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;</span><span lang="th" style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">ราชอาณาจักรไทย</span><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;</span><span class="IPA" style="font-family: 'Arial Unicode MS', 'Lucida Sans Unicode'; color: #222222; font-size: 14px; background-color: #ffffff;"><a style="color: #0b0080; background-image: none;" title="Международный фонетический алфавит" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D1%84%D0%BE%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82">[r&acirc;ːtɕʰa ʔaːnaːtɕɑ̀k tʰɑj]</a></span><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">), до 1939 и в 1945&mdash;1948&nbsp;гг.&nbsp;</span><strong style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;"><a style="color: #0b0080; background-image: none;" title="Сиам" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B0%D0%BC">Сиам</a></strong><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;&mdash;&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Государство" href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%BE">государство</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Юго-Восточная Азия" href="https://ru.wikipedia.org/wiki/%D0%AE%D0%B3%D0%BE-%D0%92%D0%BE%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%90%D0%B7%D0%B8%D1%8F">Юго-Восточной Азии</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">, расположенное в юго-западной части полуострова&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Индокитай" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%BE%D0%BA%D0%B8%D1%82%D0%B0%D0%B9">Индокитай</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;и в северной части полуострова&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Малакка (полуостров)" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B0%D0%BA%D0%BA%D0%B0_(%D0%BF%D0%BE%D0%BB%D1%83%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2)">Малакка</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">. Граничит на востоке с&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Камбоджа" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B1%D0%BE%D0%B4%D0%B6%D0%B0">Камбоджей</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;и&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Лаос" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BE%D1%81">Лаосом</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">, на западе&nbsp;&mdash; с&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Мьянма" href="https://ru.wikipedia.org/wiki/%D0%9C%D1%8C%D1%8F%D0%BD%D0%BC%D0%B0">Мьянмой</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">, и на юге&nbsp;&mdash; с&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Малайзия" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B0%D0%B9%D0%B7%D0%B8%D1%8F">Малайзией</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">. Название (слово &laquo;тай&raquo; (</span><span lang="th" style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">ไทย</span><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">) значит &laquo;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Свобода" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0">свобода</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&raquo;</span><sup id="cite_ref-6" class="reference" style="line-height: 1em; unicode-bidi: isolate; white-space: nowrap; font-size: 11.2px; color: #222222; font-family: sans-serif; background-color: #ffffff;"><a style="color: #0b0080; background-image: none;" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B8%D0%BB%D0%B0%D0%BD%D0%B4#cite_note-6">[</a></sup><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">) вполне себя оправдывает: Таиланд&nbsp;&mdash; единственная страна Юго-Восточной Азии, сохранившая&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Независимость" href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C">независимость</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;от европейских государств, в то время как все соседние страны были колониями&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Франция" href="https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F">Франции</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;или&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Великобритания" href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F">Великобритании</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">. &laquo;Таиланд&raquo; (</span><span lang="en" style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff; font-style: italic;">Thailand</span><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">)&nbsp;&mdash;&nbsp;</span><a class="mw-redirect" style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Англицизм" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D1%86%D0%B8%D0%B7%D0%BC">англоязычный</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;вариант названия страны, введённый в обиход в 1939&nbsp;г.,&nbsp;&mdash; означает &laquo;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Страна" href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B0">страна</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;</span><a style="color: #0b0080; background-image: none; background-color: #ffffff; font-family: sans-serif; font-size: 14px;" title="Тайцы" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B9%D1%86%D1%8B">тайцев</a><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&raquo;</span><sup id="cite_ref-7" class="reference" style="line-height: 1em; unicode-bidi: isolate; white-space: nowrap; font-size: 11.2px; color: #222222; font-family: sans-serif; background-color: #ffffff;"></sup><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">, тайский вариант звучит как&nbsp;</span><em style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">Пратхет Тхай</em><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">&nbsp;или&nbsp;</span><em style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">Мыанг-Тхай</em><span style="color: #222222; font-family: sans-serif; font-size: 14px; background-color: #ffffff;">.</span></p></div>
+                </div>
+            </div>
+
+			</div>
+			
+            
+			
+                
+		
+		<h3 class="block-title">Преимущество 1</h3>
+            <div class="block-text textcontent"><p style="text-align: center;"><span style="color: #333333;"><span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 12px;">Отдых в Тайланде является популярным среди большого количества туристов со всего мира. Тайланд - это страна контрастов, где древние буддийские храмы сочетаются с громоздкими современными зданиями из стекла и металла.</span></span><span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 12px;">Огромное количество достопримечательностей сосредоточено в столице страны, городе Бангкоке. Однако большинство туристов задерживаются здесь лишь на несколько дней и после этого устремляются на юг Сиама, к морю, в такие места, как Паттайя, острова Пхукет и Самуи.</span></span></span><span style="color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">Разнообразные курорты страны предлагают туристам окунуться в особую атмосферу экзотики и наслаждения, что делает отдых в Тайланде незабываемым.</span></p></div>
+        </div>
+    </div>
+
+			</div>
+			<div class="col-md-4">
+				    <div class="block block-type-item block-state-standalone block-id-global-advicons-2">
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/8f/1ce13c01b911e89ba4ca8037377e64.png" />
+            </div>
+                <h3 class="block-title">Преимущество 2</h3>
+            <div class="block-text textcontent"><p style="text-align: center;"><a style="cursor: pointer; transition: all 0.3s; color: #2d589f; border-bottom: 1px solid rgba(45, 88, 159, 0.3); font-family: Arial, Helvetica; font-size: 14px; text-align: justify;" title="Общая информация о Таиланде" href="https://nashaplaneta.net/asia/thai/thai.html">Таиланд</a><span style="color: #333333; font-family: Arial, Helvetica; font-size: 14px; text-align: justify;">&nbsp;&ndash; безопасная страна. Тяжкие преступления, такие как убийства, грабежи и изнасилования происходят очень редко. Тайцы вообще - одна из самых дружелюбных и миролюбивых наций, и туристы могут себя чувствовать вполне комфортно и свободно даже в самых глухих и отдаленных местах. Когда кто-нибудь из туристов рассказывает о том, что у него были проблемы с местными, путешественники-старожилы восклицают: &laquo;Это что же такое надо было сделать, чтобы иметь проблемы с тайцами!&raquo;</span></p></div>
+        </div>
+    </div>
+
+			</div>
+			<div class="col-md-4">
+				    <div class="block block-type-item block-state-standalone block-id-global-advicons-3">
+        <div class="block-content">
+            <div class="block-picture">
+                <img src="http://s1654828.cdn3.setup.ru/u/8f/3fadc001b911e8b523f4a6bbc5e2cd.png" />
+            </div>
+                <h3 class="block-title">Преимущество 3</h3>
+            <div class="block-text textcontent"><p class="txt" style="margin-bottom: 5px; padding: 0px; font-size: 13px; color: #1f3642; font-family: Arial, Helvetica, FreeSans, 'Liberation Sans', 'Nimbus Sans L', sans-serif; text-align: center;">В Таиланде каждый сезон года имеет свои особенности. Погода в феврале совсем не похожа на погоду в марте, а прогноз погоды на октябрь сильно отличается от прогноза на ноябрь. Климатические условия страны подчинены влиянию муссонов, которые, впрочем, кардинально не влияют на качество отдыха в любой сезон года. Большинство туристов, побывавших в Таиланде в разные месяцы, утверждают, что погода в стране хороша для отдыха круглый год.</p>
+<p class="txt" style="margin-bottom: 5px; padding: 0px; font-size: 13px; color: #1f3642; font-family: Arial, Helvetica, FreeSans, 'Liberation Sans', 'Nimbus Sans L', sans-serif; text-align: center;"></p></div>
+        </div>
+    </div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Testimonials -->
+	<div class="section level level-3 testimonials-block" id="section-3">
+		<div class="container">
+			
+			<div class="block block-type-section_styles">
+				<div class="block-content"></div>
+			</div>
+			<div class="col-md-12 mb-30">
+				            <div class="block block-type-info  block-id-global-reviewitem">
+                <div class="block-content">
+                    <div class="block-text block-type-info-text textcontent"></div>
+                </div>
+            </div>
+
+			</div>
+			
+			<div class="col-md-4">
+				    <div class="block block-type-item block-state-standalone block-id-global-reviewitem-1">
+        <h4 class="block-title">Отзыв 1</h4>
+        <div class="block-content">
+            <div class="block-text"><p><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Всем привет! Эмоции от поездки в Тай уже подуспокоились и можно рассказать о своих впечатлениях от знакомства со Страной улыбок. Отдыхать прилетели вместе с мужем. Сразу попали под местные плюс тридцать, поэтому и акклиматизизация накрыла сразу же. Старались пережить ее с минимальными потерями. Поэтому первые три дня прошли пассивно-расслаблено. После завтрака сразу шли на пляж, купались, загорали. Где-то ближе к десяти перебирались под пальмы, потому что оставаясь на солнце рисковали сгореть. Обедали в близлежащих кафешках и было ТАК вкусн. Насколько я, не особо любящая рис со времен детского сада, уплетала его с морепродуктами&hellip;</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Скоро к жаре и погоде мы привыкли, быть тюленями нам тоже надоело, решили немного согнать накопленные на пляже и обедах калории. Вечером самостоятельно отправились на знаменитую Bangla Road на Patong. Нам она почему-то напомнила Арбат. Только там вам предложат матрешек, а здесь немного другие товары. Готовьтесь занять оборону от назойливых торговцев дурью и телом. Конец вечера и часть ночи провели в очень уютном баре под пиво, музыку и танцы.</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Самые яркие эмоции остались от нашей двухдневной поездки в Као Сок и на озеро Чео Лан. Заказывали не в отеле, искали и бронировали в тай инфо через интернет. Вышло на двоих довольно приличная сумма, но она стоила каждого потраченного бата.</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Событий хватило, но мне, конечно запомнилась прогулка на слонах к водопаду, пещера обезьян &ndash; вот уж кто профессиональные карманники. Наш гид заранее предупредил, что пока одна будет с вами &laquo;общаться&raquo;, другие смело влезут в сумку. Так что мы держали ушки на макушке. Муж больше оценил тарзанку и катание на каяках (такие маленькие лодочки). Но самая фантастика &ndash; это ночное сафари по озеру! Абсолютная тишина, плеск воды под веслами и крики тропических птиц &ndash; страшновато и восхитительно одновременно. Из минусов могу отметить: постоянно боялась что в наш так называемый домик на воде кто-нибудь или что-нибудь заползет; все на бегу, потому что нужно многое успеть посмотреть.</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Второй день был менее насыщенным: с утра посмотрели достопримечательности, позавтракали, осмотрели пещеры, немного свободного времени и уже пора обратно. Даже жалко было что уже все.</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Старалась описать все как можно короче, не знаю, получилось ли. В любом случае всем рекомендую съездить. Думаю в этой стране каждый что-то сможет найти для себя.</span></p></div>
+        </div>
+    </div>
+
+			</div>
+			<div class="col-md-4">
+				    <div class="block block-type-item block-state-standalone block-id-global-reviewitem-2">
+        <h4 class="block-title">Отзыв 2</h4>
+        <div class="block-content">
+            <div class="block-text"><p><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">В первый раз оказались в Тайланде, очень давно хотели побывать в этой стране , так как многие наши друзья возвращались в полном восторге )) Прилетели мы на Пхукет,в отель расположенный между двумя пляжами Ката и Карон. Надо сказать что оба пляжа замечательные, вход в воду неглубоко, море чистое ,сами пляжи также не грязные, некучи мусора, как иногда встречается! Надо отметить,что на Кароне достаточно сильные волны, но это иногда даже весело ? Про еду : морепродукты, фрукты и даже банальный рис , все очень вкусно ! Как идти на пляж Ката нам встретился небольшой рынок , на котором ближе к вечеру начинали продавать свежие морепродукты и другие вкусности, много столиков,рядом бар!Достаточно вкусно ( можно взять целую рыбу и накушаться вдоволь) .Ориентир: большие фигуры Халка и Кинг Конга !</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Экскурсии:ездили в национальный парк Као Сок - очень рекомендую, с Пхукете добираться около 2-2.5 часов ,но стоит того ! Огромное озеро, можно взять каное и прокатиться, вкусный обед и нереальные виды ) Также ездили на острова Пхи Пхи,райкое местечко белый белый песок и прозрачная водичка ! Совет :на Пхи Пхи нужно приезжать очень рано, так как с 9 часов начинают приезжать толпы китайцев, и Вы точно не сделаете ни одной красивой фотографии и не искупаетесь даже ?мы были там уже в 7.30 и спокойно все посмотрели, потом поехали дальше! Есть вариант таких экскурсий на два дня , но это уж решать каждому, мы сделали вывод что для нас ночевка была бы утомительной!&nbsp;</span><br style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;" /><span style="color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">Тайланд это действительно удивительная страна, чего повезло с гидами и мы учлышли столько интересной информации о культуре и обычаях этой страны ! Не делайте выводов о Тайланде в первый день,уже скоро вы наверняка ощутите ее прелесть) Мы однозначно вернемся!</span></p></div>
+        </div>
+    </div>
+
+			</div>
+			<div class="col-md-4">
+				    <div class="block block-type-item block-state-standalone block-id-global-reviewitem-3">
+        <h4 class="block-title">Отзыв 3</h4>
+        <div class="block-content">
+            <div class="block-text"><div class="respond-page__respond-text" style="padding: 0px; color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #ffffff;">В Паттайю летали уже второй раз, но маленьким ребенком- впервые! Достались очень горящие путевки, поэтому отказываться было глупо! Очень переживала, буквально проштудировала весь интернет- как же с ребенком (3 годика) в Тае, да еще в таком городе как Паттайя! Естественно, начала с изучения какими болезнями можно заразиться. Изучила карту прививок тайских деток и обнаружила, что кроме наших, обычных для России, там в обязательном порядке ставят прививку от менингита. Поставили! Она платная, но зато ставится на всю жизнь! Прилетели- наш ребенок проспал всю дорогу (видимо, потому что мы ему дали драмину- от укачивания, у нее такой вот сонный эффект). Разбудили только возле отеля). Не буду писать долго и много, скажу сразу, отдых прошел отлично! Наша задача была организовать отдых так, чтобы ребенку было интересно! Не слушайте местных гидов- не ходите на городские пляжи- там грязно! Мы каждый день (кроме дней, когда были на экскурсии) плавали на пароме на остров Ко Лан! Отлично переносится паром- это восхитительная морская прогулка- просто мечта)) Обалденные морские пейзажи- 40 минут плаванья пролетали незаметно- мы даже не успевали поспать! На островах как в сказке- белый песок, бирюзовое море!!!!<br />Следующим нашим развлечением (детским, конечно) это центр Фестиваль! там очень хорошая детская комната, туда ходили почти каждый вечер! Питались тоже там- ребенок наш любитель русской кухни, да и я тоже! Поэтому в Фестивале мы кушали борщи, пельмени, котлеты)) Там очень хорошо- прохладно! Время также пролетало незаметно! А как относились местные к нашему мальчишке)))) Гуляя по городу, он махал ручкой всем девочкам в придорожных кафе, такого внимания не получал даже наш папа! Там очень любят детей! Мы улетели в конце ноября, когда в нашем городе уже было холодно, слякоть и мерзопакостно, у ребенка начинались сопли, как обычно в этом возрасте. Вообщем, он был на грани заболевания. А прилетели в сказочное лето! Погрелись, накупались! купили ему круг - он не выходил из моря! Море- как парное молоко! Вообщем, оздоровились! Он до сих пор спрашивает, когда снова будет лето и можно будет много купаться- видимо, осталось в памяти! Поэтому, даже не задумывайтесь- прилетайте в Тай, сделайте такой подарок вашим деткам! Вы не пожалеете!</div></div>
+        </div>
+    </div>
+
+			</div>
+		</div>
+	</div>
+	<div class="section level level-4" id="section-5">
+		<div class="container">
+			
+			<div class="block block-type-section_styles">
+				<div class="block-content"></div>
+			</div>
+			<div class="col-md-12">
+				            <div class="block block-type-info  block-id-global-maps">
+                <div class="block-content">
+                    <div class="block-text block-type-info-text textcontent"></div>
+                </div>
+            </div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Slider block -->
+	<div class="section level level-5" id="section-6">
+		<div class="container">
+			
+			<div class="block block-type-section_styles">
+				<div class="block-content"></div>
+			</div>
+			<div class="col-md-12">
+				    <div class="rotator block block-type-rotator block-id-mainimg">
+        <ul id="slider-box"></ul>
+    </div>
+
+
+    </body>
+</html>
