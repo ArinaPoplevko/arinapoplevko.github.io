@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="ru-ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="/css/normalize.min.css" rel="stylesheet" type="text/css"/>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="/js/underscore-min.js"></script>
+                <script>window.tobiz = {"project_id":"86063","rep_id":"115483","user_id":"56028","owner_email":"arina.poplevko@maii.ru","user_email":"arina.poplevko@maii.ru","bs":false,"t":"0","basket_conf":null}</script>
+        <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1525788732">                <script type="text/javascript" src="/js/script.js?v=1525788732"></script>        <script type="text/javascript">tobiz.blocks = [];</script>
+        
+                
+                            <meta name="viewport" content="width=1200">
+                    
+            
+            
+        <meta name="format-detection" content="telephone=no">
+        
+                    <meta name="description" content="" />
+            <meta name="keywords" content="" />
+            <title></title>
+            
+                                
+                
+                
+                    
+        
+
+            <script type="text/javascript">
+                $(function () {
+                    $('body').on('submit', 'form[action="handler.php"]', function (event) {
+                        event.preventDefault();
+                        var this_form = $(this);
+                        if (!$(this).children("input[name=project_id]").length)
+                            $(this).prepend('<input type="hidden" name="project_id" value="' + window.tobiz.project_id + '">');
+                        if (!$(this).children("input[name=page_id]").length)
+                            $(this).prepend('<input type="hidden" name="page_id" value="' + window.tobiz.rep_id + '">');
+                        if (!$(this).children("input[name=referrer]").length)
+                            $(this).prepend('<input type="hidden" name="referrer" value="' + document.referrer + '">');
+                        if (!$(this).children("input[name=user_id]").length)
+                            $(this).prepend('<input type="hidden" name="user_id" value="' + window.tobiz.user_id + '">');
+
+                        if ($(this).find("[data-action]").size()) {
+                            console.log(123);
+                            $(this).prepend('<input type="hidden" name="action" value="' + $(this).find("[data-action]").data('action') + '">');
+                            $(this).prepend('<input type="hidden" name="amount" value="' + $(this).find("[data-action]").data('amount') + '">');
+                            $(this).prepend('<input type="hidden" name="url" value="' + $(this).find("[data-action]").data('url') + '">');
+                        } else {
+                            console.log('not found');
+                        }
+                        var formData = new FormData($(this)[0]);
+                        var this_block = $(this).closest('.section');
+                        $.ajax({
+                            dataType: "json",
+                            type: "POST",
+                            url: "/handler.php",
+                            data: formData,
+                            async: false,
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        }).done(function (data) {
+                            if (data.status == 'OK') {
+                                alert(data.msg);
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                                $('.popup_form').hide();
+                            }
+                            if (data.status == 'ERROR') {
+                                alert(data.msg);
+                            }
+                            if (data.status == 'JC') {
+                                        $('body').append(data.form);
+                                $('#jc_form').submit();
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                            }
+                            if (data.status == 'SR') {
+                                        $('body').append(data.form);
+                                $('#sr_form').submit();
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                            }
+                            if (data.status == 'GR') {
+                                        $('body').append(data.form);
+                                $('#gr_form').submit();
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                            }
+                            if (data.status == 'RK') {
+                                        this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                                window.location.href = data.url;
+                            }
+                            if (data.status == 'redirect') {
+                                        this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+
+
+                                window.location.href = data.url;
+                            }
+                            if (data.status == 'thanks') {
+                                        this_block.find('.popup_thanks').show();
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                                $('.popup_form').hide();
+                                this_block.find('.extra_info_block_wrapper').hide();
+                            }
+                            if (data.status == 'thanks_order_complete') {
+                                        this_block.find('.popup_thanks').show();
+                                this_form.each(function () {
+                                    $(this)[0].reset();
+                                })
+                                window.basket.clean();
+                                window.basket.hideForm();
+                                window.basket.renderForm();
+                                window.basket.renderBtn();
+                                window.basket.hideBtn();
+                                alert('Спасибо ваш заказ успешно оформлен!');
+                                $('.popup_form').hide();
+                            }
+                        }).error(function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr.status);
+                            console.log(thrownError)
+                        });
+                    })
+                })
+            </script>
+<style id="page_style">
+.section .title{font-family:Arial, sans-serif;}."\n"a {color:#ffffff;}."\n".section .title {font-size: 24px;}
+</style>
+
+
+    
+</head>
+<body class="editor_false">
+        <div id="wrapper">
+<div class="hide_line   section        section107  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048944" id="b_1048944"><a name="a_"></a>
+                                    
+                                        
+                                        <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                        <div class="section_inner">
+                                            
+                                                
+                                                        <div class="logo_img"><img src="/img/400x0/9a02aec278bffdac6883d45b5d082fe4.png" alt=""></div>
+                                                
+                                            
+                                            <div class="menu-and-phone-and-btn">
+                                                            <div class="btn1 surround   " target="_blank" style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); ">Перезвоните мне</div>
+                                                            <div class="social_icons  hidden ">
+                                                            <a target="_blank" class="sn sn-vk  link_vk" href=""></a>
+                                                            <a target="_blank" class="sn sn-ins  link_ins" href=""></a>
+                                                            <a target="_blank" class="sn sn-gplus  link_gplus" href=""></a>
+                                                            <a target="_blank" class="sn sn-fb  link_fb" href=""></a>
+                                                            <a target="_blank" class="sn sn-youtube  link_youtube" href=""></a>
+                                                            <a target="_blank" class="sn sn-o  link_o" href=""></a>
+                                                            <a target="_blank" class="sn sn-mail  link_mail" href=""></a>
+                                                            <a target="_blank" class="sn sn-tg  link_tg" href=""></a>
+                                                            <div class="clear"></div>
+                                                            </div>
+                                                            <div class="menu_mobile_btn"><i class="fa fa-bars"></i></div>
+                                                            <div class="menu1">
+                                                                    <ul><li class="level0"><a href="#anchor1" title="ПОЧЕМУ МЫ" target="_blank">ПОЧЕМУ МЫ</a></li><li class="level0"><a href="#anchor3" title="ОТЗЫВЫ" target="_blank">ОТЗЫВЫ</a></li><li class="level0"><a href="#anchor4" title="КОНТАКТЫ" target="_blank">КОНТАКТЫ</a></li></ul>
+                                                            </div>
+                                                            <div class="phone1 "><span style="font-size:11px;"></span><span style="font-size:14px;">+375 29 12<span style="font-family:roboto">​​​​​​​</span>3 45 67</span></div>
+                                                            <div class="clear"></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                                
+                                                    <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Заполните форму </div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Заказать звонок менеджера" style="background-color:#9e9e9e;    border-radius: 2em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                
+                                                <div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+                                    </div>
+                            </div>
+
+<div class=" section       section153    " style="background-color:#ffffff; background-image:url(/img/2840x0/519713e6f11713724daa4d3412af2ea5.jpg);" data-id="1048945" id="b_1048945"><a name="a_1031855"></a>
+							
+							
+                                                        <div class="dark"></div>
+							<div class="noise" style="background-image:url(/img/null.png);"></div>
+							<div class="section_inner  big   w500h80 ">
+								<div class="layer"><div class="title"><span style="font-size:48px;"><span style="font-family:roboto">Одежда для женщин высокого качества</span></span></div> 
+								<div class="sub_title"> <span style="font-family:roboto;">Огромный ассортимент и не менее огромные скидки</span></div> 
+								
+									<div class="btn1  animation " style="color:#ffffff;  border-radius: 2em;   box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); ">Забронировать сейчас</div>
+									<div class="btn_descr"><br></div>
+								</div>
+								
+                                                                        <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Заказать" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                        
+								<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+							</div>
+						</div>
+
+<div class="hide_line           section         transparent_ico section130  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048946" id="b_1048946"><a name="a_1031856"></a>
+                                                            
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner  ">
+								<div class="title">Наши преимущества</div> 
+								<div class="sub_title">3 причины работать с нашей компанией</div>
+                                                                <div class="catalog_items count3">
+                                                                <div class="filter_btns "><button id="descending" data-sort_dir="to_min">Сначала дорогие</button><button id="аscending" data-sort_dir="to_max">Сначала дешевые</button></div>
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											
+                                                                                        
+											<div class="c_ico1   radius    " style="background-image: url(/cicons/flag.png)"></div>
+                                                                                        <div class="title1">Доставка по России</div>
+											 <div class="txt1"> Доставка по всей России с индивидуальными условиями от 5 до 10 дней транспортными компаниями</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_33.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											
+                                                                                        
+											<div class="c_ico1   radius    " style="background-image: url(/cicons/clock.png)"></div>
+                                                                                        <div class="title1">Служба поддержки</div>
+											 <div class="txt1"> Круглосуточная служба поддержки интернет магазина, ответит на все возникающие вопросы</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_33.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											
+                                                                                        
+											<div class="c_ico1   radius    " style="background-image: url(/cicons/cart.png)"></div>
+                                                                                        <div class="title1">100% гарантия качества</div>
+											 <div class="txt1"> <p>100 процентная гарантия качества, и гарантия в течение 14 дней&nbsp;</p><p>с&nbsp;момента покупки</p></div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_33.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+							</div>
+						</div>
+
+<div class="hide_line   section        section117 " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048947" id="b_1048947"><a name="a_1031857"></a>
+                                                            
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner ">
+								<div class="title">Что такое Атласная лента и где ее применять?</div> 
+								
+								  
+									<div class="arr1">
+                                                                                
+                                                                                    <div class="col_2 image1  border   image_size_470x340  border1  "><img src="/img/470x340/26108eb56f819e6770018402bd7d1216.jpg" alt=""></div>
+                                                                                
+										
+                                                                                <div class="col_2">
+                                                                                     <div class="descr1"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Примерка перед покупкой</span></div>
+										     <div class="txt1"><p style="text-align:left"><span style="font-size:14px;">Сначала примерьте — потом купите</span></p><p style="text-align:left"><span style="font-size:14px;">Клиенты Lamoda могут примерить заказанную одежду и обувь перед тем, как принять окончательное решение о покупке.<br>- Вы оплачиваете только то, что вам подошло. Остальные вещи вы можете отдать торговому представителю или вернуть позже.<br>- Вы всегда можете заказать другой размер у сотрудника службы доставки.<br>-&nbsp;При выборе способа доставки курьером дополнительно предоставляется услуга "Примерка перед покупкой".<br>- Доступное время на примерку одного заказа - 15 минут<br>- Количество позиций в заказе, при котором доступна примерка, может различаться для разных городов.&nbsp;</span></p></div> 
+										</div>
+										<div class="clear"></div>
+									</div> 
+								  
+									<div class="arr1">
+                                                                                
+                                                                                    <div class="col_2 image1  border   image_size_470x340  border1  "><img src="/img/470x340/663b919e0167a2c6c05d2f2f04b15f67.jpg" alt=""></div>
+                                                                                
+										
+                                                                                <div class="col_2">
+                                                                                     <div class="descr1"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Немного о качестве</span></div>
+										     <div class="txt1"><p><span style="font-size:14px;"><strong>Безопасность личных данных</strong></span></p><p><span style="font-size:14px;">Все личные данные покупателей, а также данные операций по банковским картам пересылаются посредством безопасных соединений, защищенных протоколов и страниц.</span></p><p><span style="font-size:14px;"><strong>Гарантия подлинности</strong></span></p><p><span style="font-size:14px;">Мы работаем только с официальными поставщиками брендов. Подлинность продукции, представленной в интернет-магазине, гарантируется&nbsp;сертификатами (предоставляются по запросу).&nbsp;</span></p><p><span style="font-size:14px;"><strong>Контроль качества</strong></span></p><p><span style="font-size:14px;">Работники склада внимательно проверяют каждую единицу товара и при обнаружении брака сразу же возвращают ее обратно поставщику. Товар, прошедший контроль, поступает в продажу с сохранением фирменной упаковки, лейблов, бирок, всей&nbsp;необходимой документации.</span></p></div> 
+										</div>
+										<div class="clear"></div>
+									</div> 
+								
+							</div>
+						</div>
+
+<div class="hide_line    img_portrait         section         transparent_ico section130  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048948" id="b_1048948"><a name="a_1031858"></a>
+                                                            
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner  ">
+								<div class="title"><span style="font-size:36px;">Ассортимент</span></div> 
+								<div class="sub_title"><br></div>
+                                                                <div class="catalog_items count4">
+                                                                <div class="filter_btns "><button id="descending" data-sort_dir="to_min">Сначала дорогие</button><button id="аscending" data-sort_dir="to_max">Сначала дешевые</button></div>
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/250716edbe1a6cf5e7d70cf62d77d459.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Платье-рубашка</div>
+											
+											<div class="price1">750 руб.</div>
+                                                                                        <div class="btn1 add_basket  surround   " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/250716edbe1a6cf5e7d70cf62d77d459.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Пуговицы</li><li>Длина рукава:&nbsp;Короткие</li><li>Покрой:&nbsp;рубашечный</li><li>Фактура материала:&nbsp;текстильный</li><li>Тип карманов:&nbsp;накладные</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Конструктивные элементы:&nbsp;без разреза</li><li>Длина юбки\платья:&nbsp;Миди</li><li>Уход за вещами:&nbsp;барабанная сушка запрещена; бережная стирка при 30 градусах; отбеливание запрещено; сушка в вертикальном положении</li><li>Длина изделия по спинке:&nbsp;93 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация платье&nbsp;</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/40cf5b17658c1058c55509cbfe0ae6bf.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Комбенизон</div>
+											
+											<div class="price1">960 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/40cf5b17658c1058c55509cbfe0ae6bf.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Молния</li><li>Длина рукава:&nbsp;Без рукавов</li><li>Покрой:&nbsp;свободный</li><li>Фактура материала:&nbsp;текстильный</li><li>Тип карманов:&nbsp;с отрезным бочком</li><li>Длина по внутреннему шву:&nbsp;54 см</li><li>Утеплитель:&nbsp;без утепления</li><li>Уход за вещами:&nbsp;барабанная сушка запрещена; бережная стирка при 30 градусах; отбеливание запрещено; сушка в вертикальном положении</li><li>Особенности модели:&nbsp;с молнией сзади</li><li>Ширина низа брючин:&nbsp;26.5 см</li><li>Длина изделия по спинке:&nbsp;127 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация: комбенизон</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/e61ca55f9440e06ca2f53b883c5a2fa9.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Блузка</div>
+											
+											<div class="price1">450 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/e61ca55f9440e06ca2f53b883c5a2fa9.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Пуговицы</li><li>Длина рукава:&nbsp;Длинные</li><li>Фактура материала:&nbsp;гладкий</li><li>Тип карманов:&nbsp;накладные</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах; гладить с изнанки; деликатный отжим; отбеливание запрещено</li><li>Посадка рубашки:&nbsp;прямая</li><li>Длина изделия по спинке:&nbsp;65.5 см</li><li>Сезон:&nbsp;лето</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;рубашка</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/f29bc505970139de76b7fde602c630c4.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Водолазка</div>
+											
+											<div class="price1">150 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/f29bc505970139de76b7fde602c630c4.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul style="margin-left: 40px;"><li><span style="font-size:20px;">Параметры&nbsp;</span></li><li>Длина изделия:&nbsp;по спинке: 54 см</li><li>Длина рукава:&nbsp;Длинные</li><li>Фактура материала:&nbsp;трикотажный</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Уход за вещами:&nbsp;бережная стирка при t не более 40С; ручная стирка при температуре не выше 40°С</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация: водолазка</li><li>* Числовые параметры соответствуют размеру 38-40</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/cfeaf9ec9ffe9b7d51279177c19be9a9.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Платье-миди</div>
+											
+											<div class="price1">100 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/cfeaf9ec9ffe9b7d51279177c19be9a9.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Без застежки</li><li>Длина рукава:&nbsp;Без рукавов</li><li>Покрой:&nbsp;приталенный</li><li>Фактура материала:&nbsp;текстильный</li><li>Тип карманов:&nbsp;без карманов</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Конструктивные элементы: с&nbsp;разрезом&nbsp;</li><li>Длина юбки\платья:&nbsp;Миди</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;115 см</li><li>Сезон:&nbsp;лето</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;платье</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/cdc4ad84c2aabef2abacddb145a7556e.jpeg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Платье-миди</div>
+											
+											<div class="price1">450 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/cdc4ad84c2aabef2abacddb145a7556e.jpeg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Молния</li><li>Длина рукава:&nbsp;3/4</li><li>Покрой:&nbsp;приталенный</li><li>Фактура материала:&nbsp;гладкий</li><li>Тип карманов:&nbsp;без карманов</li><li>Декоративные элементы: нету&nbsp;</li><li>Конструктивные элементы: без разреза</li><li>Длина юбки\платья:&nbsp;Миди</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;102 см</li><li>Сезон:&nbsp;демисезон</li><li>Пол:&nbsp;Женский<br></li></ul><p>Комплектация:&nbsp;платье</p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/b05f02ce280eb6989f04c8056abaf590.jpeg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">​​​​​​​Платье-макси</div>
+											
+											<div class="price1">960 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/b05f02ce280eb6989f04c8056abaf590.jpeg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Молния</li><li>Длина рукава:&nbsp;Без рукавов</li><li>Покрой:&nbsp;полуприлегающий</li><li>Фактура материала:&nbsp;гладкий</li><li>Тип карманов:&nbsp;без карманов</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Конструктивные элементы: с разрезом</li><li>Длина юбки\платья:&nbsp;Макси</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;110 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li></ul><p>Комплектация:&nbsp;платье</p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/af8672f06e05adec41be908a5f63c207.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Платье-миди</div>
+											
+											<div class="price1">750 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/af8672f06e05adec41be908a5f63c207.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px">Параметры</span></li><li>Вид застежки:&nbsp;Молния</li><li>Длина рукава: без рукавов</li><li>Покрой:&nbsp;приталенный</li><li>Фактура материала:&nbsp;гладкий</li><li>Тип карманов:&nbsp;без карманов</li><li>Декоративные элементы: нету&nbsp;</li><li>Конструктивные элементы: с разрезом&nbsp;</li><li>Длина юбки\платья:&nbsp;Миди</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;102 см</li><li>Сезон:&nbsp;демисезон</li><li>Пол:&nbsp;Женский</li></ul><p>Комплектация:&nbsp;платье</p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/7d0087d59f52ced913b90cb485a67b11.jpeg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Платье-рубашка</div>
+											
+											<div class="price1">150 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/7d0087d59f52ced913b90cb485a67b11.jpeg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Пуговицы</li><li>Длина рукава: короткий&nbsp;</li><li>Покрой:&nbsp;рубашечный</li><li>Фактура материала:&nbsp;текстильный</li><li>Тип карманов:&nbsp;в шве</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Конструктивные элементы:&nbsp;кокетка</li><li>Длина юбки\платья:&nbsp;Миди</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах; гладить с изнанки; деликатный отжим</li><li>Длина изделия по спинке:&nbsp;102 см</li><li>Сезон:&nbsp;демисезон</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;пояс, платье</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/a154501e53580eb2dc5892ccc0aa8124.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Косуха</div>
+											
+											<div class="price1">450 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/a154501e53580eb2dc5892ccc0aa8124.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Длина рукава:&nbsp;Длинные</li><li>Покрой:&nbsp;приталенный</li><li>Тип карманов:&nbsp;прорезные</li><li>Утеплитель:&nbsp;без утепления</li><li>Материал подкладки:&nbsp;полиэстер; хлопок</li><li>Уход за вещами:&nbsp;деликатная химическая чистка в щадящем режиме</li><li>Длина изделия по спинке:&nbsp;48 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;ремень, косуха</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/8cd2c47ca2867a8c559c978a54095447.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Косуха</div>
+											
+											<div class="price1">960 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/8cd2c47ca2867a8c559c978a54095447.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Длина рукава:&nbsp;Длинные</li><li>Покрой:&nbsp;приталенный</li><li>Тип карманов:&nbsp;прорезные</li><li>Декоративные элементы:&nbsp;молния</li><li>Утеплитель:&nbsp;без утепления</li><li>Материал подкладки:&nbsp;полиэстер; хлопок</li><li>Уход за вещами:&nbsp;деликатная химическая чистка в щадящем режиме</li><li>Длина изделия по спинке:&nbsp;55 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;косуха</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/b14ea16342e0e12a312286701320d49d.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Косуха</div>
+											
+											<div class="price1">750 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/b14ea16342e0e12a312286701320d49d.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li><span style="font-size:20px">Параметры</span></li><li>Длина рукава:&nbsp;Длинные</li><li>Покрой:&nbsp;приталенный</li><li>Тип карманов:&nbsp;прорезные</li><li>Утеплитель:&nbsp;без утепления</li><li>Материал подкладки:&nbsp;полиэстер; хлопок</li><li>Уход за вещами:&nbsp;деликатная химическая чистка в щадящем режиме</li><li>Длина изделия по спинке:&nbsp;48 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский</li><li>Комплектация:&nbsp;косуха</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/329cfdcdd5e1b3cd27c5348d35ed491f.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Водолазка</div>
+											
+											<div class="price1">150 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/329cfdcdd5e1b3cd27c5348d35ed491f.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px">Параметры&nbsp;</span></li><li>Длина изделия:&nbsp;по спинке: 54 см</li><li>Длина рукава:&nbsp;Длинные</li><li>Фактура материала:&nbsp;трикотажный</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Уход за вещами:&nbsp;бережная стирка при t не более 40С; ручная стирка при температуре не выше 40°С</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский</li><li>Комплектация: водолазка</li><li>* Числовые параметры соответствуют размеру 38-40</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/8c3bcda5b639dc83ddd7dfb3a44915a2.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">​​​​​​​Платье с открытими плечами&nbsp;</div>
+											
+											<div class="price1">450 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;    ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/8c3bcda5b639dc83ddd7dfb3a44915a2.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Без застежки</li><li>Длина рукава:&nbsp;Без рукавов</li><li>Покрой:&nbsp;прямой</li><li>Фактура материала:&nbsp;трикотажный</li><li>Тип карманов:&nbsp;без карманов</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Конструктивные элементы:&nbsp;без разреза</li><li>Длина юбки\платья:&nbsp;Мини</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;75 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;платье</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/a7c6ecd6ab0b26ad3167bbbdb9280538.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Куртка</div>
+											
+											<div class="price1">960 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/a7c6ecd6ab0b26ad3167bbbdb9280538.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Молния</li><li>Длина рукава:&nbsp;Длинные</li><li>Покрой:&nbsp;прямой</li><li>Фактура материала:&nbsp;кожаный</li><li>Тип карманов:&nbsp;прорезные</li><li>Утеплитель:&nbsp;без утепления</li><li>Уход за вещами:&nbsp;стирка запрещена</li><li>Опции капюшона:&nbsp;без капюшона</li><li>Опции опушки:&nbsp;без опушки</li><li>Длина изделия по спинке:&nbsp;51.5 см</li><li>Сезон:&nbsp;круглогодичный</li><li>Пол:&nbsp;Женский</li><li>Комплектация: куртка&nbsp;</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0.5; background: #F2F2F2;"></div>
+											<div data-link="" class="image1  s300   show_extra_info "><img src="/img/400x580/91de4f7291757eff9cf15c8b6051a4ef.jpg" alt=""></div>
+											
+											
+											
+                                                                                        
+											
+                                                                                        <div class="title1">Рубашка</div>
+											
+											<div class="price1">750 руб.</div>
+                                                                                        <div class="btn1 surround  " style="background-color:#9e9e9e;  border-radius: 2em;   box-shadow: 0; ">Узнать подробнее</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/91de4f7291757eff9cf15c8b6051a4ef.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><ul><li style="margin-left: 40px;"><span style="font-size:20px;">Параметры</span></li><li>Вид застежки:&nbsp;Пуговицы</li><li>Длина рукава:&nbsp;Длинные</li><li>Покрой:&nbsp;рубашечный</li><li>Фактура материала:&nbsp;текстильный</li><li>Декоративные элементы:&nbsp;без элементов</li><li>Уход за вещами:&nbsp;бережная стирка при 30 градусах</li><li>Длина изделия по спинке:&nbsp;67 см</li><li>Сезон:&nbsp;лето</li><li>Пол:&nbsp;Женский<br></li><li>Комплектация:&nbsp;блузка</li></ul></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+							</div>
+						</div>
+
+<div class="hide_line  section        section161 " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1049215" id="b_1049215"><a name="a_1049215"></a>
+							
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner ">
+								<div class="title">Оставь заявку и получи скидку 15%</div> 
+								<div class="sub_title">Только до пятницы</div>
+								<div class="timer  objtimer" data-type="daily" data-dd="15" data-dm="12" data-dy="2015" data-monthly="1" data-weekly="5" data-hr="12" data-min="00">
+						<div class="days" style="color:#d62b2b">--</div>
+						<div class="hrs" style="color:#d62b2b">--</div>
+						<div class="min" style="color:#d62b2b">--</div>
+						<div class="sec" style="color:#d62b2b">--</div>
+						<div class="days_descr">Дней</div>
+						<div class="hrs_descr">Часов</div>
+						<div class="min_descr">Минут</div>
+						<div class="sec_descr">Секунд</div>
+					</div>
+								
+							</div>
+						</div>
+
+<div class="hide_line    section        section250 mode_2  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048950" id="b_1048950"><a name="a_1031859"></a>
+							
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>    
+                                                            <div class="section_inner ">
+								<div class="title">Оплата и доставка</div> 
+								<div class="sub_title"></div>
+								  
+									<div class="arr1">
+										<div class="col_2">
+											
+												<div class="image1 "><img src="/img/920x690/263bde7a7a009892b4d9f7f8bae4a6b7.png" alt=""></div>
+											
+											 
+                                                                                                <div class="overlay_image_box"> 
+                                                                                                <div class="overlay_image_title title1">Оплата</div>
+												<div class="overlay_image_subtitle subtitle1"><p>1. &nbsp; Наличные при получении&nbsp;–&nbsp;(вы делаете заказ, оставляете контактную информацию, указываете в пункте Оплата – «Наличными», при этом варианте оплата осуществляется курьеру при привозе заказа)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p>2. Наложенный платеж&nbsp;–&nbsp;это значит, что оплачивать заказ вы будете наличными при получении в отделении Почты России.&nbsp; Дополнительные комиссии в нашем магазине отсутствуют.<br></p><p><br></p><p>3. ROBOKASSA&nbsp;–&nbsp;это сервис, принимающий платежи от клиентов с помощью&nbsp;банковских карт, в любой&nbsp;электронной валюте, с помощью сервисов&nbsp;мобильная коммерция&nbsp;(МТС, Мегафон, Билайн), платежи через&nbsp;интернет-банк&nbsp;ведущих Банков РФ, платежи через банкоматы.</p></div>
+											</div>
+ 
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Оставить заявку</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="color:#9e9e9e;   ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_2 last">
+											
+												<div class="image2 "><img src="/img/920x690/a5443de6ff8da57fd600e47733943a38.jpg" alt=""></div>
+											
+											<div class="overlay_image_box">
+                                                                                                <div class="overlay_image_title title2">Доставка</div>
+												<div class="overlay_image_subtitle subtitle2"><p>1.&nbsp;Доставка по всей России&nbsp;- через транспортные компании,</p><p>&nbsp;а также&nbsp;наложенным платежом.<br>Как правило, стоимость доставки через транспортную компанию составляет около 500 руб., доставка наложенным&nbsp;</p><p>платежом 400-2 000 руб. в зависимости от размера и стоимости&nbsp;ковра.<br></p><p>2. Как правило, срок доставки (в том числе передача региональных заказов для отправки через транспортные компании) от даты оформления заказа (оплаты заказа - для отправки через транспортные компании) составляет 1-3 рабочих дня.<br></p><p>3. Самовывоз. &nbsp;Самовывоз со склада курьерской службы&nbsp;(срок доставки до пункта самовывоза составляет 7-14 &nbsp;дней в зависимости от региона)</p></div>
+											</div>
+                                                                                        
+                                                                                        <div class=" hidden btn2  " style="color:#9e9e9e;  border-radius: 0;    ">Не сейчас</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form2"><div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="color:#9e9e9e;   ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="clear"></div>
+									</div>
+								
+								<div class="clear"></div>
+							</div>
+						</div>
+
+<div class="hide_line section square        section143     " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048951" id="b_1048951"><a name="a_1031860"></a>
+                        
+                        <div class="noise" style="background-image:url(/img/null.png);"></div>
+                               <div class="section_inner">
+								
+								
+								<div class="images">
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/26172aa673eaa076c90a5a19da5b4393.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/a71b71a1926149115cf4ad26d7eed1ed.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/daf9f7388f8f230ee9b91d24091e5d19.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/ff08bdb87169202a319a4baad1021a08.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/82c8c2e6fcb64ea662a689b2e2d7df70.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									  
+											<div class="image_box    image_size_300x225 arr1 ">
+												<img src="/img/300x225/fb8970a5d10ca002435e35fcd91d0b2b.jpg" alt="">
+												<div class="overlay_image_box" data-link="" data-link-target="0">
+													<div class="overlay_image_title"></div>
+													<div class="overlay_image_descr"></div>
+												</div>
+											</div>
+									
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+
+<div class="hide_line      img_square       section         transparent_ico section130  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048952" id="b_1048952"><a name="a_1031861"></a>
+                                                            
+                                                            
+                                                            <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner  ">
+								<div class="title">Отзывы наших клиентов</div> 
+								<div class="sub_title"></div>
+                                                                <div class="catalog_items count5">
+                                                                <div class="filter_btns "><button id="descending" data-sort_dir="to_min">Сначала дорогие</button><button id="аscending" data-sort_dir="to_max">Сначала дешевые</button></div>
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											<div data-link="" class="image1  s120  radius     "><img src="/img/240x240/image_235.jpg" alt=""></div>
+                                                                                        
+											
+                                                                                        <div class="title1">Наталья&nbsp;</div>
+											 <div class="txt1"> Здравствуйте! Оформлял заказ на данном сайте впервые и не ошиблась с выбором магазина! Вежливые консультанты, точная размерная сетка и конечно же море удовольствия от удачной покупки!Непременно стану Вашим постоянным покупателем!</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_235.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											<div data-link="" class="image1  s120  radius     "><img src="/img/240x240/image_69.jpg" alt=""></div>
+                                                                                        
+											
+                                                                                        <div class="title1">Анастасия</div>
+											 <div class="txt1"> Здравствуйте! Оформлял заказ на данном сайте впервые и не ошиблась с выбором магазина! Вежливые консультанты, точная размерная сетка и конечно же море удовольствия от удачной покупки!Непременно стану Вашим постоянным покупателем!</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_69.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											<div data-link="" class="image1  s120  radius     "><img src="/img/240x240/image_85.jpg" alt=""></div>
+                                                                                        
+											
+                                                                                        <div class="title1">Андрей</div>
+											 <div class="txt1"> Здравствуйте! Оформлял заказ на данном сайте впервые и не ошиблась с выбором магазина! Вежливые консультанты, точная размерная сетка и конечно же море удовольствия от удачной покупки!Непременно стану Вашим постоянным покупателем!</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/image_85.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											<div data-link="" class="image1  s120  radius     "><img src="/img/240x240/37d94d00b28ea20fb3777d8dd2d5f364.jpg" alt=""></div>
+                                                                                        
+											
+                                                                                        <div class="title1">Роман</div>
+											 <div class="txt1"> Здравствуйте! Оформлял заказ на данном сайте впервые и не ошиблась с выбором магазина! Вежливые консультанты, точная размерная сетка и конечно же море удовольствия от удачной покупки!Непременно стану Вашим постоянным покупателем!</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/37d94d00b28ea20fb3777d8dd2d5f364.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								  
+									<div class="arr1 ">
+										<div class="col_4">
+                                                                                        <div class="col_bg" style="opacity:0; background: #FFFFFF;"></div>
+											
+											
+											
+											<div data-link="" class="image1  s120  radius     "><img src="/img/240x240/6c562e5ec10b45edf26734b37b21c864.jpg" alt=""></div>
+                                                                                        
+											
+                                                                                        <div class="title1">Александр</div>
+											 <div class="txt1"> Здравствуйте! Оформлял заказ на данном сайте впервые и не ошиблась с выбором магазина! Вежливые консультанты, точная размерная сетка и конечно же море удовольствия от удачной покупки!Непременно стану Вашим постоянным покупателем!</div> 
+											
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#9e9e9e;  border-radius: 0;    ">Узнать подробнее</div>
+                                                                                        
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#9e9e9e;    border-radius: 10em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Нажимая на кнопку, Вы принимаете <a target="_blank" href="/?personal_data=1">Положение</a> и <a target="_blank" href="/?personal_data=2">Согласие</a> на обработку персональных данных.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="extra_info_block_wrapper">
+                                                                                    <div class="extra_info_block">
+                                                                                        <div class="close">Х</div>    
+                                                                                        <div class="left"><img src="/img/400x400/6c562e5ec10b45edf26734b37b21c864.jpg" alt="">
+                                                                                            
+                                                                                        </div>    
+                                                                                        <div class="right">
+                                                                                            <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+                                                                                            
+                                                                                            <div class="btn1x surround " style="background-color:#9e9e9e; ">Узнать подробнее</div>
+                                                                                        </div>    
+                                                                                        <div class="clear"></div>    
+                                                                                            
+                                                                                    </div>
+                                                                                </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+							</div>
+						</div>
+
+<div class="hide_line  section        section306  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048953" id="b_1048953"><a name="a_1031864"></a>
+                
+                
+                <div class="noise" style="background-image:url(/img/null.png);"></div>
+                    <div class="section_inner ">
+                        <div class="title">Оставьте заявку на сайте&nbsp;<div>для того чтобы наши менеджеры связались с вами</div></div> 
+                        <div class="sub_title">Заполните ваши контактные данные и мы вам перезвоним</div>
+                        <div class="form_wrapper">
+                                <div class="form_title"></div>
+                                <div class="form1">
+                                        <form action="handler.php" enctype="multipart/form-data" method="post">
+                                          
+                                                <input type="hidden" name="Название формы" value="">	
+                                          
+                                                <div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div>
+                                          
+                                                <div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div>
+                                          
+                                                <div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div>
+                                          
+                                                <div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Записаться сейчас!" style="background-color:#9e9e9e;    border-radius: 2em; ;  box-shadow: 0 0.3em 0.3em 0px rgba(0,0,0,0.4); "></div></div>
+                                        
+                                        <div class="clear"></div>
+                                        </form>
+                                </div>
+                                <div class="form_text"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+                    </div>
+                </div>
+
+<div class="hide_line  section        section162   notext  " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048954" id="b_1048954"><a name="a_1031862"></a>
+							
+                                                        
+                                                        <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                            <div class="section_inner">
+								
+								
+								<div class="map" data-scroll_off="0" data-map-obj="[{&quot;address&quot;:&quot;Москва&quot;,&quot;color&quot;:&quot;#CE0707&quot;}]" data-map-center="{&quot;zoom&quot;:11,&quot;center&quot;:[55.737651241516,37.643325173757]}"><div class="map_inner"></div></div>
+								
+								<div class="clear"></div>
+                                                            </div>
+					</div>
+
+<div class="hide_line  section        section119   " style="background-color:#ffffff;  background-image:url(/img/1920x0/null.png);" data-id="1048955" id="b_1048955"><a name="a_1048955"></a>
+                                                    
+                                                     
+                                                    <div class="noise" style="background-image:url(/img/null.png);"></div>
+                                                    <div class="section_inner">
+                                                        
+                                                            
+                                                                    <div class="logo_img"><img src="/img/200x0/bec014c66531f561245e30d24643be2c.png" alt=""></div>
+                                                            
+                                                        
+							<div class="address-and-ua">
+                                                                     
+								<div class="address1">ООО «СтройТрейд», 123456, г.Москва, ул. Центральная 1, офис 1<br>ИНН 1234567890 ОГРН 123456789012</div>
+								 <div class="policy2">Политика конфиденциальности</div> 
+							</div>
+							<div class="phone-and-address">
+								<div class="phone1 ">+375 29 123 45 67</div>
+								<div class="text1">Звонок&nbsp; бесплатный</div>
+								<a target="_blank" href="https://tobiz.net/" class="tobiz_link ">Сделано на платформе TOBIZ.NET</a>
+							</div>
+                                                        <div class="social_icons  hidden  ">
+                                                            <a target="_blank" class="sn sn-vk  link_vk" href=""></a>
+                                                            <a target="_blank" class="sn sn-ins  link_ins" href=""></a>
+                                                            <a target="_blank" class="sn sn-gplus  link_gplus" href=""></a>
+                                                            <a target="_blank" class="sn sn-fb  link_fb" href=""></a>
+                                                            <a target="_blank" class="sn sn-youtube  link_youtube" href=""></a>
+                                                            <a target="_blank" class="sn sn-o  link_o" href=""></a>
+                                                            <a target="_blank" class="sn sn-mail  link_mail" href=""></a>
+                                                            <a target="_blank" class="sn sn-tg  link_tg" href=""></a>
+                                                        <div class="clear"></div>
+                                                        </div>
+							<div class="clear"></div>
+                                                        <div class="policy2_popup">
+                                                            <div class="policy2_title">Политика конфиденциальности</div>
+                                                            <div class="policy2_body"><p>Данный сайт уважает Ваше право и соблюдает конфиденциальность при заполнении, передаче и хранении Ваших конфиденциальных сведений.<br>Размещение заявки на данном сайте означает Ваше согласие на обработку данных и дальнейшей передачи ваших контактных данных нашей компании.<br>Под персональными данными подразумевается информация, относящаяся к субъекту персональных данных, в частности имя, контактные реквизиты (адрес электронной почты) и иные данные, относимые Федеральным законом от 27 июля 2006 года № 152-ФЗ «О персональных данных» к категории персональных данных.<br>Целью обработки персональных данных является информирование об оказываемых услугах нашей компании.</p></div>
+                                                        </div>
+						</div></div>
+
+        </div>
+            
+            
+        <div class="section" id="copyright"><div class="section_inner"><div id="tobiz_link"><a href="http://tobiz.net/" target="_blank"><span class="like_logo">TOBIZ</span><span>Сделайте сайт бесплатно <br>на конструкторе сайтов TOBIZ.NET</span></a></div></div></div>
+                                    
+     <link href='https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i|Cormorant+Infant:300,300i,400,400i,500,500i,600,600i,700,700i|Cormorant+SC:300,400,500,600,700|Cormorant+Unicase:300,400,500,600,700|EB+Garamond:400,400i,500,500i,600,600i,700,700i,800,800i|El+Messiri:400,500,600,700|Forum|Jura:300,400,500,600,700|Lobster|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Neucha|Open+Sans+Condensed:300,300i,700|PT+Sans+Narrow:400,700|PT+Sans:400,400i,700,700i|Philosopher:400,400i,700,700i|Playfair+Display+SC:400,400i,700,700i,900,900i|Poiret+One|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Ruslan+Display|Russo+One|Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+
+            
+    </body>
+</html>
